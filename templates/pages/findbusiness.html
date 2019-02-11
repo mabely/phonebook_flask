@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<h1>Find a Business</h1>
+
+<div class="jumbotron">
+    <form action="/findbusiness" method="POST">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <select name="name_type_select_b" id="name_type_select_b">
+                        <option value="biz_name" name="biz_name">Business Name</option>
+                        <option value="biz_type" name="biz_type">Business Type</option>
+                    </select>
+                    <input type="text" name="name_type_b" id="name_type_b">
+                </div>
+                <div class="col-sm">
+                    <select name="loc_select" id="loc_select">
+                        <option value="city" name="city">City</option>
+                        <option value="postcode" name="postcode">Postcode</option>
+                    </select>
+                    <input type="text" name="loc_b" id="loc_b">
+                </div>
+                <div class="col-sm">
+                    <button type="submit" class="btn btn-success" id="search">
+                        <!-- <input type="submit"> -->
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% if search %}
+<div class="row">
+<p>{{ search }}</p>
+
+</div>
+{% endif %}
+
+
+{% endblock %}

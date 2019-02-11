@@ -1,0 +1,7 @@
+*.secret
+*.db
+__pycache__/
+*.json
+.vscode/
+.pytest_cache/
+.git/

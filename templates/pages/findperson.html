@@ -1,0 +1,51 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<h1>Find a Person</h1>
+
+<div class="jumbotron">
+    <form action="/findperson" method="POST">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <label for="surname">Surname</label>
+                    <input type="text" name="name_p" id="name_p">
+                </div>
+                <div class="col-sm">
+                    <select name="loc_select" id="loc_select">
+                        <option value="city" name="city">City</option>
+                        <option value="postcode" name="postcode">Postcode</option>
+                    </select>
+                    <input type="text" name="loc_p" id="loc_p">
+<!-- 
+                <div class="col-sm input-group">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                        <div class="dropdown-menu" id="loc_p">
+                            <a class="dropdown-item" value="city" href="#">City</a>
+                            <a class="dropdown-item" value="postcode" href="#">Postcode</a>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" name="postcode" id="postcode" aria-label="Text input with dropdown button"> -->
+
+
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <button type="submit" class="btn btn-success" id="search">
+                        <!-- <input type="submit"> -->
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% if search %}
+<div class="row">
+<p>{{ search }}</p>
+
+</div>
+{% endif %}
+
+{% endblock %}
